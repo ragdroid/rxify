@@ -1,4 +1,4 @@
-package com.ragdroid.rxify.dagger;
+package com.ragdroid.rxify.logic.remote;
 
 import android.app.Application;
 
