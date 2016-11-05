@@ -1,4 +1,4 @@
-package com.ragdroid.rxify.core;
+package com.ragdroid.rxify.core.data;
 
 import android.support.annotation.NonNull;
 

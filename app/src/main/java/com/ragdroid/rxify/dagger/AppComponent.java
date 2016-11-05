@@ -1,7 +1,6 @@
 package com.ragdroid.rxify.dagger;
 
-import com.ragdroid.rxify.core.StudentDataSource;
-import com.ragdroid.rxify.logic.remote.ApiModule;
+import com.ragdroid.rxify.logic.data.remote.ApiModule;
 import com.ragdroid.rxify.logic.AppModule;
 
 import javax.inject.Singleton;

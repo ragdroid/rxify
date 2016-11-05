@@ -1,8 +1,8 @@
-package com.ragdroid.rxify.logic.remote;
+package com.ragdroid.rxify.logic.data.remote;
 
 import android.support.annotation.NonNull;
 
-import com.ragdroid.rxify.core.StudentDataSource;
+import com.ragdroid.rxify.core.data.StudentDataSource;
 import com.ragdroid.rxify.entity.Student;
 import com.ragdroid.rxify.logic.random.Randomizer;
 

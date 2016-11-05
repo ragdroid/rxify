@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Rxify</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_zip">ZipActivity</string>
+    <string name="zip_crab_hair">CrabHair</string>
+    <string name="zip_flux_weed">FluxWeed</string>
+    <string name="zip_poly_juice">PolyJuice</string>
+    <string name="home_zip">Zipyosa</string>
 </resources>

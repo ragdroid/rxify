@@ -9,4 +9,7 @@
     <color name="textPrimary">#212121</color>
     <color name="textSecondary">#757575</color>
     <color name="app_border">#BDBDBD</color>
+    <color name="app_blue">#0D96D4</color>
+    <color name="app_green">#23a222</color>
+    <color name="app_purple">#2f1da2</color>
 </resources>

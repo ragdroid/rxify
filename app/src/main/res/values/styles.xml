@@ -17,4 +17,27 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
 
+    <style name="MarbleStyle">
+        <item name="android:textSize">@dimen/text_xlarge</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="MarbleStyle.Blue">
+        <item name="android:background">@drawable/rounded_blue</item>
+    </style>
+
+    <style name="MarbleStyle.Green">
+        <item name="android:background">@drawable/rounded_green</item>
+    </style>
+
+    <style name="MarbleStyle.Purple">
+        <item name="android:background">@drawable/rounded_purple</item>
+    </style>
+
+    <style name="LineStyle">
+        <item name="android:layout_height">@dimen/one_dp</item>
+        <item name="android:background">@android:color/black</item>
+    </style>
+
 </resources>

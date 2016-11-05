@@ -1,6 +1,6 @@
-package com.ragdroid.rxify.logic.remote;
+package com.ragdroid.rxify.logic.data.remote;
 
-import com.ragdroid.rxify.core.MagicalDataSource;
+import com.ragdroid.rxify.core.data.MagicalDataSource;
 import com.ragdroid.rxify.entity.FluxWeed;
 import com.ragdroid.rxify.logic.random.Randomizer;
 
@@ -24,7 +24,7 @@ public class MagicalRemoteDataSource implements MagicalDataSource {
     }
 
     @Override
-    public Observable<FluxWeed> getFluxweed() {
+    public Observable<FluxWeed> getFluxWeed() {
         return Observable.just(new FluxWeed())
                 .delay(randomizer.randomInRange(1, 3), TimeUnit.SECONDS);
     }

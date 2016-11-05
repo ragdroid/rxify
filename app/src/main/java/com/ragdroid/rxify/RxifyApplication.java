@@ -2,7 +2,7 @@ package com.ragdroid.rxify;
 
 import android.app.Application;
 
-import com.ragdroid.rxify.logic.remote.ApiModule;
+import com.ragdroid.rxify.logic.data.remote.ApiModule;
 import com.ragdroid.rxify.dagger.AppComponent;
 import com.ragdroid.rxify.logic.AppModule;
 import com.ragdroid.rxify.dagger.DaggerAppComponent;

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.SwipeRefreshLayout
+    android:layout_marginTop="?actionBarSize"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/zip_refresh"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <LinearLayout
+
+        android:id="@+id/content_zip"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context="com.ragdroid.rxify.zip.ZipActivity"
+        tools:showIn="@layout/activity_zip">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <View
+                android:layout_gravity="center_vertical"
+                android:layout_width="match_parent"
+                style="@style/LineStyle"/>
+            <TextView
+                android:id="@+id/zip_one_one"
+                android:layout_marginLeft="@dimen/space_medium"
+                style="@style/MarbleStyle.Blue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/zip_crab_hair"/>
+            <TextView
+                android:id="@+id/zip_one_two"
+                android:visibility="gone"
+                android:layout_marginLeft="@dimen/space_xlarge"
+                style="@style/MarbleStyle.Blue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/zip_crab_hair"/>
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <View
+                android:layout_gravity="center_vertical"
+                android:layout_width="match_parent"
+                style="@style/LineStyle"/>
+            <TextView
+                android:id="@+id/zip_two_one"
+                android:visibility="gone"
+                android:layout_marginLeft="@dimen/space_medium"
+                style="@style/MarbleStyle.Green"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/zip_flux_weed"/>
+            <TextView
+                android:id="@+id/zip_two_two"
+                android:layout_marginLeft="@dimen/space_xlarge"
+                style="@style/MarbleStyle.Green"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/zip_flux_weed"/>
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <View
+                android:layout_gravity="center_vertical"
+                android:layout_width="match_parent"
+                style="@style/LineStyle"/>
+            <TextView
+                android:id="@+id/zip_three"
+                android:layout_marginLeft="@dimen/space_xlarge"
+                style="@style/MarbleStyle.Purple"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/zip_poly_juice"/>
+        </FrameLayout>
+
+    </LinearLayout>
+</android.support.v4.widget.SwipeRefreshLayout>

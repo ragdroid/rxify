@@ -1,6 +1,4 @@
-package com.ragdroid.rxify.logic.remote;
-
-import android.app.Application;
+package com.ragdroid.rxify.logic.data.remote;
 
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;

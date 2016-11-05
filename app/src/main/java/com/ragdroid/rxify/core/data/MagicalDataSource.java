@@ -1,4 +1,4 @@
-package com.ragdroid.rxify.core;
+package com.ragdroid.rxify.core.data;
 
 
 import com.ragdroid.rxify.entity.FluxWeed;
@@ -11,5 +11,5 @@ import io.reactivex.Observable;
 
 public interface MagicalDataSource {
 
-    Observable<FluxWeed> getFluxweed();
+    Observable<FluxWeed> getFluxWeed();
 }
