@@ -27,7 +27,7 @@ public class Student {
     }
 
 
-    private class Hair {
+    public class Hair {
 
         Hair() {
             this.dna = random.nextInt();

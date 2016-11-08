@@ -2,7 +2,9 @@ package com.ragdroid.rxify.logic;
 
 import android.app.Application;
 
+import com.ragdroid.rxify.core.data.MagicalDataSource;
 import com.ragdroid.rxify.core.data.StudentDataSource;
+import com.ragdroid.rxify.logic.data.remote.MagicalRemoteDataSource;
 import com.ragdroid.rxify.logic.data.remote.StudentRemoteDataSource;
 
 import javax.inject.Singleton;
@@ -31,6 +33,12 @@ public class AppModule {
     @Provides
     @Singleton
     StudentDataSource provideStudentDataSource(StudentRemoteDataSource remoteDataSource) {
+        return remoteDataSource;
+    }
+
+    @Provides
+    @Singleton
+    MagicalDataSource provideMagicalDataSource(MagicalRemoteDataSource remoteDataSource) {
         return remoteDataSource;
     }
 
