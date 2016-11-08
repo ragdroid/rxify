@@ -83,7 +83,7 @@
                 style="@style/LineStyle"/>
             <TextView
                 android:id="@+id/zip_three"
-                android:layout_marginLeft="@dimen/space_xlarge"
+                android:layout_marginLeft="@dimen/space_xlarge_plus_buffer"
                 style="@style/MarbleStyle.Purple"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

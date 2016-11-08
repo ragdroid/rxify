@@ -8,6 +8,8 @@ import com.ragdroid.rxify.entity.PolyJuice;
 import com.ragdroid.rxify.entity.Student;
 import com.ragdroid.rxify.logic.mvp.AbstractPresenter;
 
+import java.util.concurrent.TimeUnit;
+
 import javax.inject.Inject;
 
 import io.reactivex.Observable;
@@ -49,15 +51,18 @@ public class ZipPresenter extends AbstractPresenter<ZipContract.View> implements
     @Override
     public void preparePolyjuice() {
         zipData.reset();
+        unsubscribe();
         Observable<FluxWeed> fluxWeedObservable = getFluxWeedObservable();
         Observable<Student> crabHairObservable = getStudentObservable();
 
-        disposable = Observable.zip(fluxWeedObservable, crabHairObservable, new BiFunction<FluxWeed, Student, PolyJuice>() {
+        disposable = Observable.zip(fluxWeedObservable, crabHairObservable,
+                new BiFunction<FluxWeed, Student, PolyJuice>() {
             @Override
             public PolyJuice apply(FluxWeed fluxWeed, Student student) throws Exception {
                 return new PolyJuice(fluxWeed, student.getHair()).prepare();
             }
-        }).subscribeOn(Schedulers.io())
+        }).delay(1, TimeUnit.SECONDS)
+                .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Consumer<PolyJuice>() {
                     @Override

@@ -26,6 +26,6 @@ public class MagicalRemoteDataSource implements MagicalDataSource {
     @Override
     public Observable<FluxWeed> getFluxWeed() {
         return Observable.just(new FluxWeed())
-                .delay(randomizer.randomInRange(1, 3), TimeUnit.SECONDS);
+                .delay(randomizer.randomInRange(2, 5), TimeUnit.SECONDS);
     }
 }

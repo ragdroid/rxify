@@ -34,11 +34,22 @@ public class ZipActivity extends BaseActivity<ZipContract.Presenter> implements 
     }
 
     @Override
-    protected void setupActivity(Bundle savedInstanceState) {
-        ButterKnife.bind(this);
+    protected void onResume() {
+        super.onResume();
         clearView();
         refreshLayout.setRefreshing(true);
-        presenter.preparePolyjuice();
+    }
+
+    @Override
+    protected void onPause() {
+        refreshLayout.setRefreshing(false);
+        super.onPause();
+    }
+
+    @Override
+    protected void setupActivity(Bundle savedInstanceState) {
+        ButterKnife.bind(this);
+
         refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -84,6 +95,7 @@ public class ZipActivity extends BaseActivity<ZipContract.Presenter> implements 
     @Override
     public void showPolyJuice(ZipData zipData) {
         refreshLayout.setRefreshing(false);
+        refreshLayout.setEnabled(true);
         three.setVisibility(View.VISIBLE);
     }
 }

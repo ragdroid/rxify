@@ -47,13 +47,13 @@ public class StudentRemoteDataSource implements StudentDataSource {
         if (student == null) {
             student = addStudent(name);
         }
-        return Observable.just(student).delay(randomizer.randomInRange(1, 3), TimeUnit.SECONDS);
+        return Observable.just(student).delay(randomizer.randomInRange(2, 5), TimeUnit.SECONDS);
     }
 
     @Override
     public Single<List<Student>> getStudents() {
         return Observable.fromIterable(studentMap.values())
-                .delay(randomizer.randomInRange(1, 2), TimeUnit.SECONDS)
+                .delay(randomizer.randomInRange(2, 5), TimeUnit.SECONDS)
                 .toList();
     }
 
