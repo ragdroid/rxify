@@ -13,6 +13,7 @@ This project :
  - Follows the `MVP` architecture inspired by [repository](https://github.com/googlesamples/android-architecture).
  - Makes use of [`Dagger2`](https://google.github.io/dagger/)
  - Uses [Butterknife] (http://jakewharton.github.io/butterknife/)
+ - Uses `TestScheduler` for writing tests.
  
 ## Zip-yosa ([`ZipActivity`](https://github.com/ragdroid/rxify/blob/master/app/src/main/java/com/ragdroid/rxify/zip/ZipActivity.java))
 
@@ -26,5 +27,4 @@ This project :
 
 ## To-Do
 
- - Use `TestScheduler` for writing tests.
  - Implement more demos.

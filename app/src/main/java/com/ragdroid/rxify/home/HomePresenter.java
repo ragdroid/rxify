@@ -1,5 +1,6 @@
 package com.ragdroid.rxify.home;
 
+import com.ragdroid.rxify.core.BaseSchedulerProvider;
 import com.ragdroid.rxify.logic.mvp.AbstractPresenter;
 
 import javax.inject.Inject;
@@ -11,8 +12,8 @@ import javax.inject.Inject;
 public class HomePresenter extends AbstractPresenter<HomeContract.View> implements HomeContract.Presenter {
 
     @Inject
-    public HomePresenter() {
-
+    public HomePresenter(BaseSchedulerProvider provider) {
+        super(provider);
     }
 
     @Override

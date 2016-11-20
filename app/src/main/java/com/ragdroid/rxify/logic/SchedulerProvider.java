@@ -4,6 +4,8 @@ import android.support.annotation.NonNull;
 
 import com.ragdroid.rxify.core.BaseSchedulerProvider;
 
+import javax.inject.Inject;
+
 import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
@@ -13,6 +15,11 @@ import io.reactivex.schedulers.Schedulers;
  */
 
 public class SchedulerProvider implements BaseSchedulerProvider {
+
+    @Inject
+    public SchedulerProvider() {
+
+    }
 
     @Override
     @NonNull
