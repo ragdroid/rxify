@@ -1,5 +1,6 @@
 package com.ragdroid.rxify.logic.mvp;
 
+import com.ragdroid.rxify.core.BaseSchedulerProvider;
 import com.ragdroid.rxify.core.mvp.BaseView;
 
 /**
@@ -7,6 +8,12 @@ import com.ragdroid.rxify.core.mvp.BaseView;
  */
 
 public abstract class AbstractPresenter<V extends BaseView> {
+
+    protected BaseSchedulerProvider provider;
+
+    public AbstractPresenter(BaseSchedulerProvider provider) {
+        this.provider = provider;
+    }
 
     protected V getView() {
         return view;

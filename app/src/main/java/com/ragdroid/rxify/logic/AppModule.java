@@ -2,6 +2,7 @@ package com.ragdroid.rxify.logic;
 
 import android.app.Application;
 
+import com.ragdroid.rxify.core.BaseSchedulerProvider;
 import com.ragdroid.rxify.core.data.MagicalDataSource;
 import com.ragdroid.rxify.core.data.StudentDataSource;
 import com.ragdroid.rxify.logic.data.remote.MagicalRemoteDataSource;
@@ -40,6 +41,12 @@ public class AppModule {
     @Singleton
     MagicalDataSource provideMagicalDataSource(MagicalRemoteDataSource remoteDataSource) {
         return remoteDataSource;
+    }
+
+    @Provides
+    @Singleton
+    BaseSchedulerProvider providerSchedulerProvider(SchedulerProvider provider) {
+        return provider;
     }
 
 }

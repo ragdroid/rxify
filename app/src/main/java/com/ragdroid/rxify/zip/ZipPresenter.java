@@ -1,5 +1,6 @@
 package com.ragdroid.rxify.zip;
 
+import com.ragdroid.rxify.core.BaseSchedulerProvider;
 import com.ragdroid.rxify.core.data.MagicalDataSource;
 import com.ragdroid.rxify.core.data.StudentDataSource;
 import com.ragdroid.rxify.core.zip.ZipData;
@@ -13,11 +14,9 @@ import java.util.concurrent.TimeUnit;
 import javax.inject.Inject;
 
 import io.reactivex.Observable;
-import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.BiFunction;
 import io.reactivex.functions.Consumer;
-import io.reactivex.schedulers.Schedulers;
 
 /**
  * Created by garimajain on 08/11/16.
@@ -31,7 +30,10 @@ public class ZipPresenter extends AbstractPresenter<ZipContract.View> implements
     private Disposable disposable;
 
     @Inject
-    public ZipPresenter(MagicalDataSource magicalDataSource, StudentDataSource studentDataSource) {
+    public ZipPresenter(MagicalDataSource magicalDataSource,
+                        StudentDataSource studentDataSource,
+                        BaseSchedulerProvider provider) {
+        super(provider);
         this.magicalDataSource = magicalDataSource;
         this.studentDataSource = studentDataSource;
     }
@@ -62,8 +64,8 @@ public class ZipPresenter extends AbstractPresenter<ZipContract.View> implements
                 return new PolyJuice(fluxWeed, student.getHair()).prepare();
             }
         }).delay(1, TimeUnit.SECONDS)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(provider.io())
+                .observeOn(provider.ui())
                 .subscribe(new Consumer<PolyJuice>() {
                     @Override
                     public void accept(PolyJuice polyJuice) throws Exception {
@@ -78,7 +80,7 @@ public class ZipPresenter extends AbstractPresenter<ZipContract.View> implements
 
     private Observable<Student> getStudentObservable() {
         return studentDataSource.getStudent("Crab")
-                .observeOn(AndroidSchedulers.mainThread())
+                .observeOn(provider.ui())
                 .doOnNext(new Consumer<Student>() {
                     @Override
                     public void accept(Student student) throws Exception {
@@ -93,7 +95,7 @@ public class ZipPresenter extends AbstractPresenter<ZipContract.View> implements
 
     private Observable<FluxWeed> getFluxWeedObservable() {
         return magicalDataSource.getFluxWeed()
-                .observeOn(AndroidSchedulers.mainThread())
+                .observeOn(provider.ui())
                 .doOnNext(new Consumer<FluxWeed>() {
                     @Override
                     public void accept(FluxWeed fluxWeed) throws Exception {
