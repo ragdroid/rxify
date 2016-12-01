@@ -4,6 +4,8 @@
 Created a simple demo for the talk at [droidconIN 2016, Banglore](https://droidconin.talkfunnel.com/2016/94-rxify-a-simple-spell-for-complex-rxjava-operators).
 
  - For more information, checkout multi-part `Rxify` blog series on [medium](https://medium.com/@ragdroid/rxify-a-simple-spell-for-complex-rxjava-operators-part-1-4c31921583c4#.6hxqs39e6).
+ - For the video of this talk click [here] (https://www.youtube.com/watch?v=UTyPMjfO1cA&list=PL279M8GbNsevRo-PUq-9UrfJgFAIK6ONd&index=4)
+ - For the slides click [here] (https://speakerdeck.com/ragdroid/rxify-a-simple-spell-for-complex-rxjava-operators)
 
 ## Project Structure
 
