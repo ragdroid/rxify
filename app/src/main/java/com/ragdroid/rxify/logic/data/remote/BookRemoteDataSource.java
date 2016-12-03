@@ -4,7 +4,6 @@ import android.support.annotation.NonNull;
 
 import com.ragdroid.rxify.core.data.BookDataSource;
 import com.ragdroid.rxify.entity.Book;
-import com.ragdroid.rxify.entity.Student;
 import com.ragdroid.rxify.logic.random.Randomizer;
 
 import java.util.ArrayList;
@@ -16,7 +15,6 @@ import javax.inject.Inject;
 
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
-import io.reactivex.Single;
 import io.reactivex.functions.Function;
 import io.reactivex.functions.Predicate;
 
@@ -140,6 +138,8 @@ public class BookRemoteDataSource implements BookDataSource {
 
     @Override
     public Observable<List<Book>> getBook(@NonNull final String query) {
+        //more the length, lesser the delay
+        int start = query.length() != 0 ? 3000 / query.length() : 0;
         //wanted to perform `initBooks()` in background as well
         return Observable.fromCallable(new Callable<List<Book>>() {
             @Override
@@ -157,10 +157,10 @@ public class BookRemoteDataSource implements BookDataSource {
         }).filter(new Predicate<Book>() {
             @Override
             public boolean test(Book book) throws Exception {
-                return book.name.startsWith(query);
+                return book.name.contains(query);
             }
         }).toList()
                 .toObservable()
-                .delay(randomizer.randomInRange(2, 5), TimeUnit.SECONDS);
+                .delay(randomizer.randomInRange(start, start + 100), TimeUnit.MILLISECONDS);
     }
 }

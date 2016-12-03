@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical"
+                  android:layout_margin="@dimen/keyline_1"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent">
+
+        <android.support.v7.widget.SearchView
+            android:id="@+id/lib_search_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/min_button_height"
+            android:iconifiedByDefault="false"
+            android:queryHint="@string/lib_search_query"/>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/lib_books_list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/lib_fix_bug"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_fixit"
+        android:layout_gravity="right|bottom"
+        android:layout_marginRight="@dimen/keyline_1"
+        android:layout_marginBottom="@dimen/keyline_1"
+        app:backgroundTint="@color/app_purple"/>
+
+</FrameLayout>

@@ -12,7 +12,7 @@
         <activity
             android:name=".home.HomeActivity"
             android:label="@string/app_name"
-            android:screenOrientation="landscape"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -24,6 +24,12 @@
             android:name=".zip.ZipActivity"
             android:screenOrientation="landscape"
             android:label="@string/title_activity_zip"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".library.LibraryActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_library"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
     </application>
