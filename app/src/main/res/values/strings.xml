@@ -6,4 +6,7 @@
     <string name="zip_flux_weed">FluxWeed</string>
     <string name="zip_poly_juice">PolyJuice</string>
     <string name="home_zip">Zipyosa</string>
+    <string name="lib_search_query">Enter Book to Find</string>
+    <string name="title_activity_library">Library</string>
+    <string name="home_library">Library</string>
 </resources>

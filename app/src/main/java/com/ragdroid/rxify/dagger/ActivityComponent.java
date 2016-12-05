@@ -1,6 +1,7 @@
 package com.ragdroid.rxify.dagger;
 
 import com.ragdroid.rxify.home.HomeActivity;
+import com.ragdroid.rxify.library.LibraryActivity;
 import com.ragdroid.rxify.logic.ActivityModule;
 import com.ragdroid.rxify.zip.ZipActivity;
 
@@ -17,4 +18,6 @@ public interface ActivityComponent {
     void inject(ZipActivity zipActivity);
 
     void inject(HomeActivity homeActivity);
+
+    void inject(LibraryActivity libraryActivity);
 }
