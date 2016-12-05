@@ -7,6 +7,7 @@ import com.ragdroid.rxify.core.data.BookDataSource;
 import com.ragdroid.rxify.entity.Book;
 import com.ragdroid.rxify.logic.mvp.AbstractPresenter;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -104,7 +105,11 @@ public class LibraryPresenter extends AbstractPresenter<LibraryContract.View> im
 
     @Override
     public void onQueryTextChange(final String newText) {
-        subject.onNext(newText);
+        if (newText == null || newText.length() == 0) {
+            onBooksFetched(new ArrayList<Book>());
+        } else {
+            subject.onNext(newText);
+        }
 
     }
 

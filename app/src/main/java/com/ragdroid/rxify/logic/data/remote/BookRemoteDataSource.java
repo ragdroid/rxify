@@ -139,7 +139,7 @@ public class BookRemoteDataSource implements BookDataSource {
     @Override
     public Observable<List<Book>> getBook(@NonNull final String query) {
         //more the length, lesser the delay
-        int start = query.length() != 0 ? 3000 / query.length() : 0;
+        int start = 3000 / query.length();
         //wanted to perform `initBooks()` in background as well
         return Observable.fromCallable(new Callable<List<Book>>() {
             @Override
