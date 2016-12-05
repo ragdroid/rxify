@@ -19,6 +19,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
 import io.reactivex.processors.ReplayProcessor;
+import io.reactivex.subjects.PublishSubject;
 import io.reactivex.subjects.ReplaySubject;
 
 /**
@@ -30,7 +31,7 @@ public class LibraryPresenter extends AbstractPresenter<LibraryContract.View> im
     private static final String TAG = LibraryPresenter.class.getSimpleName();
     private final BookDataSource dataSource;
 
-    ReplaySubject<String> subject = ReplaySubject.create();
+    PublishSubject<String> subject = PublishSubject.create();
 
     private Disposable disposable;
     private boolean isFixed = false;
