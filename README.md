@@ -26,6 +26,11 @@ This project :
     - Initialise `PolyJuice` from the results of API calls. 
     - Hide the loader after both calls have completed.
     
+## Concat-um Map-um ([`LibraryActivity`](https://github.com/ragdroid/rxify/blob/master/app/src/main/java/com/ragdroid/rxify/library/LibraryActivity.java))
+
+ - Perform Auto-Complete Search using `flatMap()`
+ - Toggle state to fix it using `concatMap()`
+    
 
 ## To-Do
 
