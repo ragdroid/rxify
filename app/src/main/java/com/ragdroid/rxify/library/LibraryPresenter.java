@@ -54,7 +54,7 @@ public class LibraryPresenter extends AbstractPresenter<LibraryContract.View> im
         if (isFixed) {
             disposable = subject
                     .debounce(300, TimeUnit.MILLISECONDS)
-                    .concatMap(new Function<String, ObservableSource<List<Book>>>() {
+                    .switchMap(new Function<String, ObservableSource<List<Book>>>() {
                         @Override
                         public ObservableSource<List<Book>> apply(String s) throws Exception {
                             Log.d(TAG, "getting books for " + s);

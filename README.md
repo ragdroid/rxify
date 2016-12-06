@@ -34,7 +34,7 @@ This project :
     ![Here's the demo](https://github.com/ragdroid/rxify/raw/master/images/Zipyosa.gif)
 
     
-## Concat-um Map-um ([`LibraryActivity`](https://github.com/ragdroid/rxify/blob/master/app/src/main/java/com/ragdroid/rxify/library/LibraryActivity.java))
+## Preserving Order in AutoComplete-Search ([`LibraryActivity`](https://github.com/ragdroid/rxify/blob/master/app/src/main/java/com/ragdroid/rxify/library/LibraryActivity.java))
 
   Depicting the problem of Ordering the results in Auto-Search and solving it using concatMap().
   For more information, checkout this [article] (https://medium.com/@ragdroid/rxify-maintaining-order-in-auto-complete-search-d5c46ba26578#.f367qiy0u)
@@ -53,6 +53,13 @@ This project :
  Using `concatMap()` - Order is maintained.
 
  ![Using `concatMap()`](https://github.com/ragdroid/rxify/raw/master/images/Fixy.gif)
+
+Ordering problem is fixed, but we shouldn't be updating the list this frequently. 
+`switchMap()` will improve the results even further :
+
+ Using `switchMap()` - Order is maintained.
+
+ ![Using `switchMap()`](https://github.com/ragdroid/rxify/raw/master/images/SwitchMap.gif)
 
 
 ## To-Do
