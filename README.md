@@ -62,6 +62,6 @@ Ordering problem is fixed, but we shouldn't be updating the list this frequently
  ![Using `switchMap()`](https://github.com/ragdroid/rxify/raw/master/images/SwitchMap.gif)
 
 
-## To-Do
+## TO-DO
 
  - Implement more demos.
