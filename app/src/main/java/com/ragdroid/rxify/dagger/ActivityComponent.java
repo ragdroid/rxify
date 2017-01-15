@@ -1,5 +1,6 @@
 package com.ragdroid.rxify.dagger;
 
+import com.ragdroid.rxify.codelab.ChillActivity;
 import com.ragdroid.rxify.home.HomeActivity;
 import com.ragdroid.rxify.library.LibraryActivity;
 import com.ragdroid.rxify.logic.ActivityModule;
@@ -20,4 +21,6 @@ public interface ActivityComponent {
     void inject(HomeActivity homeActivity);
 
     void inject(LibraryActivity libraryActivity);
+
+    void inject(ChillActivity chillActivity);
 }

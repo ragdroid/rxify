@@ -14,11 +14,6 @@
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
         </activity>
         <activity
             android:name=".zip.ZipActivity"
@@ -31,6 +26,15 @@
             android:screenOrientation="portrait"
             android:label="@string/title_activity_library"
             android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".codelab.ChillActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_library"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
     </application>
 

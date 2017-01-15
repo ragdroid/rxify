@@ -1,5 +1,7 @@
 package com.ragdroid.rxify.logic;
 
+import com.ragdroid.rxify.codelab.ChillPresenter;
+import com.ragdroid.rxify.core.BaseSchedulerProvider;
 import com.ragdroid.rxify.dagger.ActivityScope;
 import com.ragdroid.rxify.home.HomeContract;
 import com.ragdroid.rxify.home.HomePresenter;
@@ -34,6 +36,12 @@ public class ActivityModule {
     @Provides
     public LibraryContract.Presenter provideLibraryPresenter(LibraryPresenter presenter) {
         return presenter;
+    }
+
+    @ActivityScope
+    @Provides
+    public ChillPresenter provideChillPresenter(BaseSchedulerProvider provider) {
+        return new ChillPresenter(provider);
     }
 
 }
