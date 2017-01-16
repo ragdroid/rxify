@@ -1,5 +1,6 @@
-package com.ragdroid.rxify.codelab;
+package com.ragdroid.rxify.codelab.presenter;
 
+import com.ragdroid.rxify.codelab.CodeLabContract;
 import com.ragdroid.rxify.core.BaseSchedulerProvider;
 import com.ragdroid.rxify.logic.mvp.AbstractPresenter;
 
@@ -70,7 +71,7 @@ public abstract class BaseCLPresenter<T> extends
 
     protected abstract Disposable getDisposable();
 
-    ObservableTransformer<T, T> lazyTransformer = new ObservableTransformer<T, T>() {
+    protected ObservableTransformer<T, T> lazyTransformer = new ObservableTransformer<T, T>() {
         @Override
         public ObservableSource<T> apply(Observable<T> upstream) {
             return upstream.subscribeOn(provider.io())

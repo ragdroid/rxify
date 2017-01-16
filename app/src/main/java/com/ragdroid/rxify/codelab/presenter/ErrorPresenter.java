@@ -1,8 +1,7 @@
-package com.ragdroid.rxify.codelab;
+package com.ragdroid.rxify.codelab.presenter;
 
+import com.ragdroid.rxify.codelab.CodeLabContract;
 import com.ragdroid.rxify.core.BaseSchedulerProvider;
-
-import java.util.concurrent.TimeUnit;
 
 import javax.inject.Inject;
 
@@ -13,16 +12,16 @@ import io.reactivex.disposables.Disposable;
  * Created by garimajain on 15/01/17.
  */
 
-public class IntervalPresenter extends BaseCLPresenter<Long> implements CodeLabContract.Presenter {
+public class ErrorPresenter extends BaseCLPresenter<Object> implements CodeLabContract.Presenter {
 
     @Inject
-    public IntervalPresenter(BaseSchedulerProvider provider) {
+    public ErrorPresenter(BaseSchedulerProvider provider) {
         super(provider);
     }
 
     @Override
     protected Disposable getDisposable() {
-        return Observable.interval(1000, TimeUnit.MILLISECONDS)
+        return Observable.error(new RuntimeException("BOOM!"))
                 .compose(lazyTransformer)
                 .subscribe(next, error, complete);
     }

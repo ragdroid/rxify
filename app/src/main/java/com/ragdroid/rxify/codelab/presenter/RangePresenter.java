@@ -1,5 +1,6 @@
-package com.ragdroid.rxify.codelab;
+package com.ragdroid.rxify.codelab.presenter;
 
+import com.ragdroid.rxify.codelab.CodeLabContract;
 import com.ragdroid.rxify.core.BaseSchedulerProvider;
 
 import javax.inject.Inject;
@@ -11,16 +12,16 @@ import io.reactivex.disposables.Disposable;
  * Created by garimajain on 15/01/17.
  */
 
-public class EmptyPresenter extends BaseCLPresenter<Object> implements CodeLabContract.Presenter {
+public class RangePresenter extends BaseCLPresenter<Integer> implements CodeLabContract.Presenter {
 
     @Inject
-    public EmptyPresenter(BaseSchedulerProvider provider) {
+    public RangePresenter(BaseSchedulerProvider provider) {
         super(provider);
     }
 
     @Override
     protected Disposable getDisposable() {
-        return Observable.empty()
+        return Observable.range(1, 10)
                 .compose(lazyTransformer)
                 .subscribe(next, error, complete);
     }

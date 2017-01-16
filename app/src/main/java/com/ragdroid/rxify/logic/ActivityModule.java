@@ -1,15 +1,15 @@
 package com.ragdroid.rxify.logic;
 
 import com.ragdroid.rxify.codelab.ChillPresenter;
-import com.ragdroid.rxify.codelab.EmptyPresenter;
-import com.ragdroid.rxify.codelab.ErrorPresenter;
-import com.ragdroid.rxify.codelab.FromPresenter;
-import com.ragdroid.rxify.codelab.IntervalPresenter;
-import com.ragdroid.rxify.codelab.IntervalRangePresenter;
-import com.ragdroid.rxify.codelab.JustPresenter;
-import com.ragdroid.rxify.codelab.NeverPresenter;
-import com.ragdroid.rxify.codelab.RangePresenter;
-import com.ragdroid.rxify.codelab.TimerPresenter;
+import com.ragdroid.rxify.codelab.presenter.EmptyPresenter;
+import com.ragdroid.rxify.codelab.presenter.ErrorPresenter;
+import com.ragdroid.rxify.codelab.presenter.FromPresenter;
+import com.ragdroid.rxify.codelab.presenter.IntervalPresenter;
+import com.ragdroid.rxify.codelab.presenter.IntervalRangePresenter;
+import com.ragdroid.rxify.codelab.presenter.JustPresenter;
+import com.ragdroid.rxify.codelab.presenter.NeverPresenter;
+import com.ragdroid.rxify.codelab.presenter.RangePresenter;
+import com.ragdroid.rxify.codelab.presenter.TimerPresenter;
 import com.ragdroid.rxify.core.BaseSchedulerProvider;
 import com.ragdroid.rxify.dagger.ActivityScope;
 import com.ragdroid.rxify.home.HomeContract;
