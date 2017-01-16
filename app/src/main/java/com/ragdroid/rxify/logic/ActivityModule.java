@@ -3,6 +3,7 @@ package com.ragdroid.rxify.logic;
 import com.ragdroid.rxify.codelab.ChillPresenter;
 import com.ragdroid.rxify.codelab.EmptyPresenter;
 import com.ragdroid.rxify.codelab.JustPresenter;
+import com.ragdroid.rxify.codelab.NeverPresenter;
 import com.ragdroid.rxify.core.BaseSchedulerProvider;
 import com.ragdroid.rxify.dagger.ActivityScope;
 import com.ragdroid.rxify.home.HomeContract;
@@ -56,6 +57,13 @@ public class ActivityModule {
     @Provides
     public EmptyPresenter provideEmptyPresenter(BaseSchedulerProvider provider) {
         return new EmptyPresenter(provider);
+    }
+
+
+    @ActivityScope
+    @Provides
+    public NeverPresenter provideNeverPresenter(BaseSchedulerProvider provider) {
+        return new NeverPresenter(provider);
     }
 
 
