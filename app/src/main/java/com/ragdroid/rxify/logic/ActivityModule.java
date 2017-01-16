@@ -3,6 +3,7 @@ package com.ragdroid.rxify.logic;
 import com.ragdroid.rxify.codelab.ChillPresenter;
 import com.ragdroid.rxify.codelab.EmptyPresenter;
 import com.ragdroid.rxify.codelab.ErrorPresenter;
+import com.ragdroid.rxify.codelab.FromPresenter;
 import com.ragdroid.rxify.codelab.IntervalPresenter;
 import com.ragdroid.rxify.codelab.IntervalRangePresenter;
 import com.ragdroid.rxify.codelab.JustPresenter;
@@ -101,6 +102,12 @@ public class ActivityModule {
     @Provides
     public TimerPresenter provideTimerPresenter(BaseSchedulerProvider provider) {
         return new TimerPresenter(provider);
+    }
+
+    @ActivityScope
+    @Provides
+    public FromPresenter provideFromPresenter(BaseSchedulerProvider provider) {
+        return new FromPresenter(provider);
     }
 
 
