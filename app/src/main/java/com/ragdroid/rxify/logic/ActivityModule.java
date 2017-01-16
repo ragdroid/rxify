@@ -1,6 +1,7 @@
 package com.ragdroid.rxify.logic;
 
 import com.ragdroid.rxify.codelab.ChillPresenter;
+import com.ragdroid.rxify.codelab.DistinctPresenter;
 import com.ragdroid.rxify.codelab.FilterPresenter;
 import com.ragdroid.rxify.codelab.presenter.EmptyPresenter;
 import com.ragdroid.rxify.codelab.presenter.ErrorPresenter;
@@ -117,6 +118,10 @@ public class ActivityModule {
         return new FilterPresenter(provider);
     }
 
-
+    @ActivityScope
+    @Provides
+    public DistinctPresenter provideDistinctPresenter(BaseSchedulerProvider provider) {
+        return new DistinctPresenter(provider);
+    }
 
 }
