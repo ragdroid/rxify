@@ -3,36 +3,34 @@ package com.ragdroid.rxify.codelab;
 import com.ragdroid.rxify.codelab.presenter.BaseCLPresenter;
 import com.ragdroid.rxify.core.BaseSchedulerProvider;
 
-import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
 import javax.inject.Inject;
 
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.BiFunction;
 
 /**
  * Created by garimajain on 15/01/17.
  */
 
-public class ChillPresenter extends BaseCLPresenter<String> implements CodeLabContract.Presenter {
+public class TakeUntilPresenter extends BaseCLPresenter<Long> implements CodeLabContract.Presenter {
 
     //Input
-    Observable<String> inputValues = Observable.fromIterable(
-            Arrays.asList("Color : Red", "Size : M", "Occasion : Casual", "Type : T-Shirt"));
+    Observable<Long> inputValues = Observable.interval(100, TimeUnit.MILLISECONDS);
+    Observable<Long> cutOff = Observable.timer(250, TimeUnit.MILLISECONDS); //hint
 
-    //TODO Concatenate filters to send to API
-    //Print "Color : Red | Size : M | Occasion : Casual | Type : T-Shirt"
+    //TODO Print all values till 250 milliseconds
 
     @Inject
-    public ChillPresenter(BaseSchedulerProvider provider) {
+    public TakeUntilPresenter(BaseSchedulerProvider provider) {
         super(provider);
     }
 
     @Override
     protected Disposable getDisposable() {
         return inputValues
+                .takeUntil(cutOff)
                 .compose(lazyTransformer)
                 .subscribe(next, error, complete);
     }

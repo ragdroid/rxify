@@ -5,6 +5,7 @@ import com.ragdroid.rxify.codelab.DistinctPresenter;
 import com.ragdroid.rxify.codelab.FilterPresenter;
 import com.ragdroid.rxify.codelab.SkipPresenter;
 import com.ragdroid.rxify.codelab.TakePresenter;
+import com.ragdroid.rxify.codelab.TakeUntilPresenter;
 import com.ragdroid.rxify.codelab.presenter.EmptyPresenter;
 import com.ragdroid.rxify.codelab.presenter.ErrorPresenter;
 import com.ragdroid.rxify.codelab.presenter.FromPresenter;
@@ -137,6 +138,13 @@ public class ActivityModule {
     public SkipPresenter provideSkipPresenter(BaseSchedulerProvider provider) {
         return new SkipPresenter(provider);
     }
+
+    @ActivityScope
+    @Provides
+    public TakeUntilPresenter provideTakeUntilPresenter(BaseSchedulerProvider provider) {
+        return new TakeUntilPresenter(provider);
+    }
+
 
 
 }
