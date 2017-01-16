@@ -12,15 +12,15 @@ import io.reactivex.disposables.Disposable;
  * Created by garimajain on 15/01/17.
  */
 
-public class ChillPresenter extends BaseCLPresenter<Integer> implements CodeLabContract.Presenter {
+public class TakePresenter extends BaseCLPresenter<Integer> implements CodeLabContract.Presenter {
 
     //Input
     Observable<Integer> inputValues = Observable.range(0, 10);
 
-    //TODO Print all except first three
+    //TODO Print only first five
 
     @Inject
-    public ChillPresenter(BaseSchedulerProvider provider) {
+    public TakePresenter(BaseSchedulerProvider provider) {
         super(provider);
     }
 
