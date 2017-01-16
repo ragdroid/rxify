@@ -5,6 +5,7 @@ import com.ragdroid.rxify.codelab.EmptyPresenter;
 import com.ragdroid.rxify.codelab.ErrorPresenter;
 import com.ragdroid.rxify.codelab.JustPresenter;
 import com.ragdroid.rxify.codelab.NeverPresenter;
+import com.ragdroid.rxify.codelab.RangePresenter;
 import com.ragdroid.rxify.core.BaseSchedulerProvider;
 import com.ragdroid.rxify.dagger.ActivityScope;
 import com.ragdroid.rxify.home.HomeContract;
@@ -71,6 +72,13 @@ public class ActivityModule {
     @Provides
     public ErrorPresenter provideErrorPresenter(BaseSchedulerProvider provider) {
         return new ErrorPresenter(provider);
+    }
+
+
+    @ActivityScope
+    @Provides
+    public RangePresenter provideRangePresenter(BaseSchedulerProvider provider) {
+        return new RangePresenter(provider);
     }
 
 
