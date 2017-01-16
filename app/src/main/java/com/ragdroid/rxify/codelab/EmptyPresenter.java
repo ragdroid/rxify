@@ -11,10 +11,10 @@ import io.reactivex.disposables.Disposable;
  * Created by garimajain on 15/01/17.
  */
 
-public class ChillPresenter extends BaseCLPresenter<Object> implements CodeLabContract.Presenter {
+public class EmptyPresenter extends BaseCLPresenter<Object> implements CodeLabContract.Presenter {
 
     @Inject
-    public ChillPresenter(BaseSchedulerProvider provider) {
+    public EmptyPresenter(BaseSchedulerProvider provider) {
         super(provider);
     }
 
