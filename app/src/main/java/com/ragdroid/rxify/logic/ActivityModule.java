@@ -3,6 +3,7 @@ package com.ragdroid.rxify.logic;
 import com.ragdroid.rxify.codelab.ChillPresenter;
 import com.ragdroid.rxify.codelab.EmptyPresenter;
 import com.ragdroid.rxify.codelab.ErrorPresenter;
+import com.ragdroid.rxify.codelab.IntervalPresenter;
 import com.ragdroid.rxify.codelab.JustPresenter;
 import com.ragdroid.rxify.codelab.NeverPresenter;
 import com.ragdroid.rxify.codelab.RangePresenter;
@@ -79,6 +80,13 @@ public class ActivityModule {
     @Provides
     public RangePresenter provideRangePresenter(BaseSchedulerProvider provider) {
         return new RangePresenter(provider);
+    }
+
+
+    @ActivityScope
+    @Provides
+    public IntervalPresenter provideIntervalPresenter(BaseSchedulerProvider provider) {
+        return new IntervalPresenter(provider);
     }
 
 
