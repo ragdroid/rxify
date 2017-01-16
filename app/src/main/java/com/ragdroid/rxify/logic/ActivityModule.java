@@ -4,6 +4,7 @@ import com.ragdroid.rxify.codelab.ChillPresenter;
 import com.ragdroid.rxify.codelab.EmptyPresenter;
 import com.ragdroid.rxify.codelab.ErrorPresenter;
 import com.ragdroid.rxify.codelab.IntervalPresenter;
+import com.ragdroid.rxify.codelab.IntervalRangePresenter;
 import com.ragdroid.rxify.codelab.JustPresenter;
 import com.ragdroid.rxify.codelab.NeverPresenter;
 import com.ragdroid.rxify.codelab.RangePresenter;
@@ -87,6 +88,12 @@ public class ActivityModule {
     @Provides
     public IntervalPresenter provideIntervalPresenter(BaseSchedulerProvider provider) {
         return new IntervalPresenter(provider);
+    }
+
+    @ActivityScope
+    @Provides
+    public IntervalRangePresenter provideIntervalRangePresenter(BaseSchedulerProvider provider) {
+        return new IntervalRangePresenter(provider);
     }
 
 

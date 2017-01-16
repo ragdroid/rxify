@@ -13,10 +13,10 @@ import io.reactivex.disposables.Disposable;
  * Created by garimajain on 15/01/17.
  */
 
-public class ChillPresenter extends BaseCLPresenter<Long> implements CodeLabContract.Presenter {
+public class IntervalRangePresenter extends BaseCLPresenter<Long> implements CodeLabContract.Presenter {
 
     @Inject
-    public ChillPresenter(BaseSchedulerProvider provider) {
+    public IntervalRangePresenter(BaseSchedulerProvider provider) {
         super(provider);
     }
 
