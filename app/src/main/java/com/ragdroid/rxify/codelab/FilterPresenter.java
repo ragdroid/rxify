@@ -3,8 +3,6 @@ package com.ragdroid.rxify.codelab;
 import com.ragdroid.rxify.codelab.presenter.BaseCLPresenter;
 import com.ragdroid.rxify.core.BaseSchedulerProvider;
 
-import java.util.Arrays;
-
 import javax.inject.Inject;
 
 import io.reactivex.Observable;
@@ -15,15 +13,15 @@ import io.reactivex.functions.Predicate;
  * Created by garimajain on 15/01/17.
  */
 
-public class ChillPresenter extends BaseCLPresenter<Integer> implements CodeLabContract.Presenter {
+public class FilterPresenter extends BaseCLPresenter<Integer> implements CodeLabContract.Presenter {
 
     //Input
-    Observable<Integer> inputValues = Observable.fromIterable(Arrays.asList(1, 1, 2, 3, 2));
+    Observable<Integer> inputValues = Observable.range(0,10);
 
-    //TODO Print all distinct numbers
+    //TODO Print all even numbers
 
     @Inject
-    public ChillPresenter(BaseSchedulerProvider provider) {
+    public FilterPresenter(BaseSchedulerProvider provider) {
         super(provider);
     }
 
