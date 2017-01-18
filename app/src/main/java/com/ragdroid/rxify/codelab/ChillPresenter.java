@@ -3,7 +3,8 @@ package com.ragdroid.rxify.codelab;
 import com.ragdroid.rxify.codelab.presenter.BaseCLPresenter;
 import com.ragdroid.rxify.core.BaseSchedulerProvider;
 
-import java.util.Arrays;
+import java.util.concurrent.Callable;
+import java.util.concurrent.TimeUnit;
 
 import javax.inject.Inject;
 
@@ -18,9 +19,36 @@ import io.reactivex.functions.Function;
 
 public class ChillPresenter extends BaseCLPresenter<String> implements CodeLabContract.Presenter {
 
-    Observable<String> inputValues = Observable.fromIterable(Arrays.asList("Hello World!", "How Are You?"));
+    //Input
+    Observable<String> gryffindorObservable = Observable.defer(new Callable<ObservableSource<? extends String>>() {
+        @Override
+        public ObservableSource<? extends String> call() throws Exception {
+            return Observable.range(1, 2)
+                    .flatMap(new Function<Integer, ObservableSource<String>>() {
+                        @Override
+                        public ObservableSource<String> apply(Integer integer) throws Exception {
+                            return Observable.just("G" + integer)
+                                    .delay(integer * 500, TimeUnit.MILLISECONDS);
+                        }
+                    });
+        }
+    });
+    Observable<String> slytherinObservable = Observable.defer(new Callable<ObservableSource<? extends String>>() {
+        @Override
+        public ObservableSource<? extends String> call() throws Exception {
+            return Observable.range(1, 2)
+                    .flatMap(new Function<Integer, ObservableSource<String>>() {
+                        @Override
+                        public ObservableSource<String> apply(Integer integer) throws Exception {
+                            return Observable.just("S" + integer)
+                                    .delay(integer * 700, TimeUnit.MILLISECONDS);
+                        }
+                    });
+        }
+    });
 
-    //TODO Print all the words from strings
+    //TODO AssignmentEvaluator
+    //Input is G1(500 ms), S1(700ms), G2(1000 ms), S2(1400 ms)
 
     @Inject
     public ChillPresenter(BaseSchedulerProvider provider) {
@@ -29,13 +57,7 @@ public class ChillPresenter extends BaseCLPresenter<String> implements CodeLabCo
 
     @Override
     protected Disposable getDisposable() {
-        return inputValues
-                .flatMap(new Function<String, ObservableSource<String>>() {
-                    @Override
-                    public ObservableSource<String> apply(String inputString) throws Exception {
-                        return Observable.fromArray(inputString.split(" "));
-                    }
-                })
+        return slytherinObservable
                 .compose(lazyTransformer)
                 .subscribe(next, error, complete);
     }
