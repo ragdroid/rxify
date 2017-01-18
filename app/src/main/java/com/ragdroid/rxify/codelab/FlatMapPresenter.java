@@ -16,14 +16,14 @@ import io.reactivex.functions.Function;
  * Created by garimajain on 15/01/17.
  */
 
-public class ChillPresenter extends BaseCLPresenter<String> implements CodeLabContract.Presenter {
+public class FlatMapPresenter extends BaseCLPresenter<String> implements CodeLabContract.Presenter {
 
     Observable<String> inputValues = Observable.fromIterable(Arrays.asList("Hello World!", "How Are You?"));
 
     //TODO Print all the words from strings
 
     @Inject
-    public ChillPresenter(BaseSchedulerProvider provider) {
+    public FlatMapPresenter(BaseSchedulerProvider provider) {
         super(provider);
     }
 
