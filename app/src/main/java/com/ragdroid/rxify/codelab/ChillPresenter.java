@@ -3,27 +3,22 @@ package com.ragdroid.rxify.codelab;
 import com.ragdroid.rxify.codelab.presenter.BaseCLPresenter;
 import com.ragdroid.rxify.core.BaseSchedulerProvider;
 
-import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
 import javax.inject.Inject;
 
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.BiFunction;
 
 /**
  * Created by garimajain on 15/01/17.
  */
 
-public class ChillPresenter extends BaseCLPresenter<String> implements CodeLabContract.Presenter {
+public class ChillPresenter extends BaseCLPresenter<Long> implements CodeLabContract.Presenter {
 
-    //Input
-    Observable<String> inputValues = Observable.fromIterable(
-            Arrays.asList("Color : Red", "Size : M", "Occasion : Casual", "Type : T-Shirt"));
+    Observable<Long> inputValues = Observable.intervalRange(1, 10, 100, 500, TimeUnit.MILLISECONDS);
 
-    //TODO Concatenate filters to send to API
-    //Print "Color : Red | Size : M | Occasion : Casual | Type : T-Shirt"
+    //TODO Print multiples of 5
 
     @Inject
     public ChillPresenter(BaseSchedulerProvider provider) {
