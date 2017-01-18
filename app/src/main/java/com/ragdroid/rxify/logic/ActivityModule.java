@@ -1,5 +1,6 @@
 package com.ragdroid.rxify.logic;
 
+import com.ragdroid.rxify.codelab.AssignmentPresenter;
 import com.ragdroid.rxify.codelab.ChillPresenter;
 import com.ragdroid.rxify.codelab.DistinctPresenter;
 import com.ragdroid.rxify.codelab.FilterPresenter;
@@ -166,6 +167,13 @@ public class ActivityModule {
     public FlatMapPresenter provideFlatMapPresenter(BaseSchedulerProvider provider) {
         return new FlatMapPresenter(provider);
     }
+
+    @ActivityScope
+    @Provides
+    public AssignmentPresenter provideAssignmentPresenter(BaseSchedulerProvider provider) {
+        return new AssignmentPresenter(provider);
+    }
+
 
 
 }
