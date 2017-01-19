@@ -43,6 +43,7 @@ public abstract class BaseCLPresenter<T> extends
         public void accept(Throwable throwable) throws Exception {
             if (getView() != null) {
                 getView().append("Error : " + throwable.getMessage());
+                throwable.printStackTrace();
             }
         }
     };
