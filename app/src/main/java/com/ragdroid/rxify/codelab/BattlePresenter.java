@@ -3,24 +3,20 @@ package com.ragdroid.rxify.codelab;
 import com.ragdroid.rxify.codelab.presenter.BaseCLPresenter;
 import com.ragdroid.rxify.core.BaseSchedulerProvider;
 
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Observable;
-import io.reactivex.ObservableSource;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.BiFunction;
-import io.reactivex.functions.Function;
 
 /**
  * Created by garimajain on 15/01/17.
  */
 
-public class ChillPresenter extends BaseCLPresenter<Long> implements CodeLabContract.Presenter {
+public class BattlePresenter extends BaseCLPresenter<Long> implements CodeLabContract.Presenter {
 
     public Observable<Long> inputValues = Observable.interval(1, 1, TimeUnit.MICROSECONDS);
 
-    public ChillPresenter(BaseSchedulerProvider provider) {
+    public BattlePresenter(BaseSchedulerProvider provider) {
         super(provider);
     }
 
