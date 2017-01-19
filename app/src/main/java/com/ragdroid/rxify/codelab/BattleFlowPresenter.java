@@ -12,11 +12,11 @@ import io.reactivex.disposables.Disposable;
  * Created by garimajain on 15/01/17.
  */
 
-public class ChillPresenter extends BaseCLPresenter<Long> implements CodeLabContract.Presenter {
+public class BattleFlowPresenter extends BaseCLPresenter<Long> implements CodeLabContract.Presenter {
 
     public Flowable<Long> inputValues = Flowable.interval(1, 1, TimeUnit.MICROSECONDS);
 
-    public ChillPresenter(BaseSchedulerProvider provider) {
+    public BattleFlowPresenter(BaseSchedulerProvider provider) {
         super(provider);
     }
 
