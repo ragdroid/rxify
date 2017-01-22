@@ -13,8 +13,6 @@ import org.mockito.Mock;
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Observable;
-import io.reactivex.plugins.RxJavaPlugins;
-import io.reactivex.subscribers.TestSubscriber;
 
 import static org.mockito.Mockito.*;
 

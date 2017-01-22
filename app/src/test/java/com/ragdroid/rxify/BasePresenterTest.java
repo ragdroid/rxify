@@ -30,7 +30,7 @@ public class BasePresenterTest {
 
     protected TestScheduler testScheduler = new TestScheduler();
 
-    BaseSchedulerProvider schedulerProvider = new BaseSchedulerProvider() {
+    protected BaseSchedulerProvider schedulerProvider = new BaseSchedulerProvider() {
 
         @NonNull
         @Override
