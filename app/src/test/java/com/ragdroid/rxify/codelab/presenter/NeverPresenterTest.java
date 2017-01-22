@@ -35,6 +35,7 @@ public class NeverPresenterTest extends BasePresenterTest {
         presenter.getDisposable();
         testScheduler.triggerActions();
         //TODO test getDisposable() - view.append() was called 0 times
+        verify(view, times(0)).append(anyString());
     }
 
 }

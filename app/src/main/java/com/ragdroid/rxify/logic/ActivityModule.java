@@ -1,5 +1,6 @@
 package com.ragdroid.rxify.logic;
 
+import com.ragdroid.rxify.codelab.ThreadingPresenter;
 import com.ragdroid.rxify.codelab.presenter2.AssignmentPresenter;
 import com.ragdroid.rxify.codelab.presenter2.BattleFlowPresenter;
 import com.ragdroid.rxify.codelab.presenter2.BattlePresenter;
@@ -187,6 +188,13 @@ public class ActivityModule {
     public BattleFlowPresenter provideBattleFlowPresenter(BaseSchedulerProvider provider) {
         return new BattleFlowPresenter(provider);
     }
+
+    @ActivityScope
+    @Provides
+    public ThreadingPresenter provideThreadingPresenter(BaseSchedulerProvider provider) {
+        return new ThreadingPresenter(provider);
+    }
+
 
 
 }
