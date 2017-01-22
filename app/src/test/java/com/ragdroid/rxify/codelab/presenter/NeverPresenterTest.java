@@ -2,30 +2,31 @@ package com.ragdroid.rxify.codelab.presenter;
 
 import com.ragdroid.rxify.BasePresenterTest;
 import com.ragdroid.rxify.codelab.CodeLabContract;
-import com.ragdroid.rxify.codelab.presenter.EmptyPresenter;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
 
-import static org.mockito.Mockito.*;
+import static org.mockito.Matchers.anyString;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 
 
 /**
  * Created by garimajain on 23/01/17.
  */
 
-public class EmptyPresenterTest extends BasePresenterTest {
+public class NeverPresenterTest extends BasePresenterTest {
 
     @Mock CodeLabContract.View view;
 
-    private EmptyPresenter presenter;
+    private NeverPresenter presenter;
 
     @Before
     @Override
     public void init() {
         super.init();
-        presenter = new EmptyPresenter(schedulerProvider);
+        presenter = new NeverPresenter(schedulerProvider);
         presenter.onViewCreated(view);
     }
 
@@ -33,8 +34,7 @@ public class EmptyPresenterTest extends BasePresenterTest {
     public void testGetDisposable() {
         presenter.getDisposable();
         testScheduler.triggerActions();
-        //TODO test getDisposable() - view.append() was called once
-        verify(view, times(1)).append("Completed.");
+        //TODO test getDisposable() - view.append() was called 0 times
     }
 
 }
