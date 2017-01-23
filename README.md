@@ -62,6 +62,48 @@ Ordering problem is fixed, but we shouldn't be updating the list this frequently
  ![Using `switchMap()`](https://github.com/ragdroid/rxify/raw/master/images/SwitchMap.gif)
 
 
+## Code-lab
+
+ - Switch to branch `codelab`.
+ - Checkout at the starting commit : SHA - `d5db64950f1616c308bb8174bb8dc01ab69971e8`.
+ - List of all the commits is [here](https://github.com/ragdroid/rxify/commits/codelab).
+ - Open `ChillActivity` and switch to the desired presenter.
+ - SpeakerDeck available [here](https://speakerdeck.com/ragdroid/rxify-a-talk-to-remember-codelab).
+ - Following Presenters are implemented :
+ 
+ - Basic Spells :
+        - [`EmptyPresenter`](app/src/main/java/com/ragdroid/rxify/codelab/presenter/EmptyPresenter.java)
+         - [`ErrorPresenter`](app/src/main/java/com/ragdroid/rxify/codelab/presenter/ErrorPresenter.java)
+        - [`FromPresenter`](app/src/main/java/com/ragdroid/rxify/codelab/presenter/FromPresenter.java)
+         - [`IntervalPresenter`](app/src/main/java/com/ragdroid/rxify/codelab/presenter/IntervalPresenter.java)
+        - [`IntervalRangePresenter`](app/src/main/java/com/ragdroid/rxify/codelab/presenter/IntervalRangePresenter.java) 
+        - [`JustPresenter`](app/src/main/java/com/ragdroid/rxify/codelab/presenter/JustPresenter.java)
+         - [`NeverPresenter`](app/src/main/java/com/ragdroid/rxify/codelab/presenter/NeverPresenter.java)
+         - [`RangePresenter`](app/src/main/java/com/ragdroid/rxify/codelab/presenter/RangePresenter.java)
+         - [`TimePresenter`](app/src/main/java/com/ragdroid/rxify/codelab/presenter/TimePresenter.java) 
+        
+  - To-Do Section : 
+        - [`AssignmentPresenter`](app/src/main/java/com/ragdroid/rxify/codelab/presenter2/AssignmentPresenter.java) 
+        - [`BattleFlowPresenter`](app/src/main/java/com/ragdroid/rxify/codelab/presenter2/BattleFlowPresenter.java) 
+        - [`BattlePresenter`](app/src/main/java/com/ragdroid/rxify/codelab/presenter2/BattlePresenter.java) 
+        - [`DistinctPresenter`](app/src/main/java/com/ragdroid/rxify/codelab/presenter2/DistinctPresenter.java) 
+        - [`FilterPresenter`](app/src/main/java/com/ragdroid/rxify/codelab/presenter2/FilterPresenter.java) 
+        - [`FlatmapPresenter`](app/src/main/java/com/ragdroid/rxify/codelab/presenter2/FlatmapPresenter.java) 
+        - [`MapPresenter`](app/src/main/java/com/ragdroid/rxify/codelab/presenter2/MapPresenter.java) 
+        - [`ReducePresenter`](app/src/main/java/com/ragdroid/rxify/codelab/presenter2/ReducePresenter.java) 
+        - [`SkipPresenter`](app/src/main/java/com/ragdroid/rxify/codelab/presenter2/SkipPresenter.java) 
+        - [`TakePresenter`](app/src/main/java/com/ragdroid/rxify/codelab/presenter2/TakePresenter.java) 
+        - [`TakeUntilPresenter`](app/src/main/java/com/ragdroid/rxify/codelab/presenter2/TakeUntilPresenter.java)
+
+   - Threading :
+        - [`ThreadingPresenter`](app/src/main/java/com/ragdroid/rxify/codelab/ThreadingPresenter.java)
+
+   - Testing :
+        - [`EmptyPresenter`](app/src/test/java/com/ragdroid/rxify/codelab/presenter/EmptyPresenterTest.java)
+        - [`NeverPresenter`](app/src/test/java/com/ragdroid/rxify/codelab/presenter/NeverPresenterTest.java)
+        - [`MagicalRemoteDataSourceTest`](app/src/test/java/com/ragdroid/rxify/logic/data/remote/MagicalRemoteDataSourceTest.java)
+
+
 ## TO-DO
 
  - Implement more demos.
