@@ -33,15 +33,15 @@ public class MagicalRemoteDataSourceTest {
     public void testGetFluxWeed() {
 
         //TODO Create a TestObserver
-
+        TestObserver<Object> testObserver = TestObserver.create();
         //TODO subscribe to getFluxWeed()
-
+        magicalDataSource.getFluxWeed().subscribe(testObserver);
         //TODO tell observer to wait for terminal event
-
+        testObserver.awaitTerminalEvent();
         //TODO assert there are no errors
-
+        testObserver.assertNoErrors();
         //TODO assert we received onComplete
-
+        testObserver.assertComplete();
 
     }
 
@@ -49,15 +49,15 @@ public class MagicalRemoteDataSourceTest {
     public void testGetFluxWeedFlowable() {
 
         //TODO Create a TestSubscriber
-
+        TestSubscriber<Object> testSubscriber = TestSubscriber.create();
         //TODO subscribe to getFluxWeed()
-
+        magicalDataSource.getFluxWeedFlowable().subscribe(testSubscriber);
         //TODO tell subscriber to wait for terminal event
-
+        testSubscriber.awaitTerminalEvent();
         //TODO assert there are no errors
-
+        testSubscriber.assertNoErrors();
         //TODO assert we received onComplete
-
+        testSubscriber.assertComplete();
     }
 
 }
