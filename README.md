@@ -16,6 +16,7 @@ This project :
  - Makes use of [`Dagger2`](https://google.github.io/dagger/)
  - Uses [Butterknife] (http://jakewharton.github.io/butterknife/)
  - Uses `TestScheduler` for writing tests.
+ - This project also contains a step-by-step codelab for learning `RxJava`. Switch to the [`codelab` branch](https://github.com/ragdroid/rxify/tree/codelab) and Get Started with the [codelab](codelab/codelab.md).
  
 ## Zip-yosa ([`ZipActivity`](https://github.com/ragdroid/rxify/blob/master/app/src/main/java/com/ragdroid/rxify/zip/ZipActivity.java))
 
@@ -31,7 +32,7 @@ This project :
 
     Here's the demo :
 
-    ![Here's the demo](https://github.com/ragdroid/rxify/raw/master/images/Zipyosa.gif)
+    ![Here's the demo](images/Zipyosa.gif)
 
     
 ## Preserving Order in AutoComplete-Search ([`LibraryActivity`](https://github.com/ragdroid/rxify/blob/master/app/src/main/java/com/ragdroid/rxify/library/LibraryActivity.java))
