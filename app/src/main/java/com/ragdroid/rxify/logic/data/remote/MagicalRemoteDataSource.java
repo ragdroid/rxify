@@ -8,6 +8,7 @@ import java.util.concurrent.TimeUnit;
 
 import javax.inject.Inject;
 
+import io.reactivex.Flowable;
 import io.reactivex.Observable;
 
 /**
@@ -26,6 +27,12 @@ public class MagicalRemoteDataSource implements MagicalDataSource {
     @Override
     public Observable<FluxWeed> getFluxWeed() {
         return Observable.just(new FluxWeed())
+                .delay(randomizer.randomInRange(2, 5), TimeUnit.SECONDS);
+    }
+
+    @Override
+    public Flowable<FluxWeed> getFluxWeedFlowable() {
+        return Flowable.just(new FluxWeed())
                 .delay(randomizer.randomInRange(2, 5), TimeUnit.SECONDS);
     }
 }

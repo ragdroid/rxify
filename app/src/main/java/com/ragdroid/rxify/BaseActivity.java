@@ -23,17 +23,20 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
         implements BaseView {
 
     @Inject protected T presenter;
+    protected ActivityModule activityModule;
+    protected Toolbar toolbar;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutId());
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         AppComponent appComponent = ((RxifyApplication) getApplication()).getAppComponent();
+        activityModule = new ActivityModule();
         ActivityComponent activityComponent = DaggerActivityComponent.builder()
                 .appComponent(appComponent)
-                .activityModule(new ActivityModule())
+                .activityModule(activityModule)
                 .build();
         injectFrom(activityComponent);
         ((AbstractPresenter) presenter).onViewCreated(this);
@@ -62,6 +65,7 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
     @Override
     protected void onDestroy() {
         ((AbstractPresenter) presenter).onViewDestroyed();
+        activityModule = null;
         super.onDestroy();
     }
 }

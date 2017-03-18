@@ -5,5 +5,5 @@ package com.ragdroid.rxify.core;
  */
 
 public enum ItemType {
-    BOOK
+    CODELAB, BOOK
 }

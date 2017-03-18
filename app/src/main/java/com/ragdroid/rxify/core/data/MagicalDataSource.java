@@ -3,6 +3,7 @@ package com.ragdroid.rxify.core.data;
 
 import com.ragdroid.rxify.entity.FluxWeed;
 
+import io.reactivex.Flowable;
 import io.reactivex.Observable;
 
 /**
@@ -12,4 +13,6 @@ import io.reactivex.Observable;
 public interface MagicalDataSource {
 
     Observable<FluxWeed> getFluxWeed();
+
+    Flowable<FluxWeed> getFluxWeedFlowable();
 }

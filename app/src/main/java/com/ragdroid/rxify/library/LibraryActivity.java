@@ -9,7 +9,7 @@ import android.support.v7.widget.SearchView;
 import com.fueled.reclaim.ItemsViewAdapter;
 import com.ragdroid.rxify.BaseActivity;
 import com.ragdroid.rxify.R;
-import com.ragdroid.rxify.core.library.BookItem;
+import com.ragdroid.rxify.core.list.BookItem;
 import com.ragdroid.rxify.dagger.ActivityComponent;
 import com.ragdroid.rxify.entity.Book;
 

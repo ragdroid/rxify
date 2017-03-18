@@ -23,10 +23,18 @@
         android:layout_height="wrap_content"
         android:text="@string/home_zip"/>
     <TextView
+        android:layout_marginBottom="@dimen/keyline_1"
         android:id="@+id/rxify_library"
         style="@style/MarbleStyle.Green"
         android:layout_width="match_parent"
         android:gravity="center"
         android:layout_height="wrap_content"
         android:text="@string/home_library"/>
+    <TextView
+        android:id="@+id/rxify_cl"
+        style="@style/MarbleStyle.Purple"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="@string/title_cl"/>
 </LinearLayout>
