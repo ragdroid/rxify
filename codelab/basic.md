@@ -21,7 +21,7 @@ Open the file [`ChillPresenter`](app/src/main/java/com/ragdroid/rxify/codelab/Ch
 ```
 Observable.just("Hello World!”);
 ```
-![output](output/Justify.png = 300x602)
+![output](output/Justify.png)
  	
 ### `empty()`
 (SHA - `d5db64950f1616c308bb8174bb8dc01ab69971e8`)
