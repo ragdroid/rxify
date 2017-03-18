@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/codelab_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Item 1"
+        style="@style/TextAppearance.AppCompat.Large"
+        android:paddingTop="@dimen/keyline_1"
+        android:paddingBottom="@dimen/keyline_1"
+        />
+</LinearLayout>

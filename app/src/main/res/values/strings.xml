@@ -9,5 +9,5 @@
     <string name="lib_search_query">Enter Book to Find</string>
     <string name="title_activity_library">Library</string>
     <string name="home_library">Library</string>
-    <string name="home_cl">CodeLab</string>
+    <string name="title_cl">CodeLab</string>
 </resources>

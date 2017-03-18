@@ -2,7 +2,6 @@ package com.ragdroid.rxify.codelab.presenter;
 
 import com.ragdroid.rxify.BasePresenterTest;
 import com.ragdroid.rxify.codelab.CodeLabContract;
-import com.ragdroid.rxify.codelab.presenter.EmptyPresenter;
 
 import org.junit.Before;
 import org.junit.Test;

@@ -1,4 +1,4 @@
-package com.ragdroid.rxify.core.library;
+package com.ragdroid.rxify.core.list;
 
 import android.view.View;
 import android.widget.TextView;
@@ -42,7 +42,7 @@ public class BookItem extends BaseItem<Book, Void, BookItem.ViewHolder> {
 
     @Override
     public Enum<ItemType> getType() {
-        return ItemType.BOOK;
+        return ItemType.CODELAB;
     }
 
     static class ViewHolder extends BaseViewHolder {

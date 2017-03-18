@@ -6,6 +6,7 @@ import android.os.Bundle;
 import com.ragdroid.rxify.BaseActivity;
 import com.ragdroid.rxify.R;
 import com.ragdroid.rxify.codelab.ChillActivity;
+import com.ragdroid.rxify.codelab.list.CodeLabListActivity;
 import com.ragdroid.rxify.dagger.ActivityComponent;
 import com.ragdroid.rxify.library.LibraryActivity;
 import com.ragdroid.rxify.zip.ZipActivity;
@@ -44,7 +45,7 @@ public class HomeActivity extends BaseActivity<HomeContract.Presenter> implement
 
 	@OnClick(R.id.rxify_cl)
 	void onClClicked() {
-		Intent intent = new Intent(this, ChillActivity.class);
+		Intent intent = new Intent(this, CodeLabListActivity.class);
 		startActivity(intent);
 	}
 

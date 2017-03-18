@@ -1,7 +1,8 @@
-package com.ragdroid.rxify.codelab;
+package com.ragdroid.rxify.codelab.presenter2;
 
 import android.util.Log;
 
+import com.ragdroid.rxify.codelab.CodeLabContract;
 import com.ragdroid.rxify.codelab.presenter.BaseCLPresenter;
 import com.ragdroid.rxify.core.BaseSchedulerProvider;
 
