@@ -10,7 +10,6 @@ import javax.inject.Inject;
 
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Function;
 
 /**
  * Created by garimajain on 15/01/17.
@@ -30,13 +29,9 @@ public class MapPresenter extends BaseCLPresenter<Long> implements CodeLabContra
     @Override
     protected Disposable getDisposable() {
         return inputValues
-                .map(new Function<Long, Long>() {
-                    @Override
-                    public Long apply(Long aLong) throws Exception {
-                        return aLong * 5;
-                    }
-                })
+                .map(aLong -> aLong * 5)
                 .compose(lazyTransformer)
                 .subscribe(next, error, complete);
     }
+
 }

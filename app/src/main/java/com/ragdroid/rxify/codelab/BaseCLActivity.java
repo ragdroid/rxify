@@ -114,6 +114,8 @@ public abstract class BaseCLActivity<T extends CodeLabContract.Presenter> extend
                 return activityModule.provideBattleFlowPresenter(schedulerProvider);
             case 20:
                 return activityModule.provideThreadingPresenter(schedulerProvider);
+            case 22:
+                return activityModule.provideTimeTurnerPresenter(schedulerProvider);
             case 21:
             default:
                 return activityModule.provideChillPresenter(schedulerProvider);

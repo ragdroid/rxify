@@ -14,6 +14,7 @@ import io.reactivex.Observable;
 
 public interface BookDataSource {
 
-    Observable<List<Book>> getBook(@NonNull String name);
+    Observable<List<Book>> getBooksJinxed(@NonNull String name);
 
+    Observable<List<Book>> getBooks(@NonNull String query);
 }

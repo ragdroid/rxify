@@ -2,6 +2,7 @@ package com.ragdroid.rxify.logic;
 
 import com.ragdroid.rxify.codelab.CodeLabContract;
 import com.ragdroid.rxify.codelab.list.CodeLabListPresenter;
+import com.ragdroid.rxify.codelab.misc.TimeTurnerPresenter;
 import com.ragdroid.rxify.codelab.presenter2.ThreadingPresenter;
 import com.ragdroid.rxify.codelab.presenter2.AssignmentPresenter;
 import com.ragdroid.rxify.codelab.presenter2.BattleFlowPresenter;
@@ -195,6 +196,12 @@ public class ActivityModule {
     @Provides
     public ThreadingPresenter provideThreadingPresenter(BaseSchedulerProvider provider) {
         return new ThreadingPresenter(provider);
+    }
+
+    @ActivityScope
+    @Provides
+    public TimeTurnerPresenter provideTimeTurnerPresenter(BaseSchedulerProvider provider) {
+        return new TimeTurnerPresenter(provider);
     }
 
     @ActivityScope
