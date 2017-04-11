@@ -13,14 +13,11 @@ import java.util.concurrent.TimeUnit;
 
 import javax.inject.Inject;
 
-import io.reactivex.Flowable;
 import io.reactivex.ObservableSource;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
-import io.reactivex.processors.ReplayProcessor;
 import io.reactivex.subjects.PublishSubject;
-import io.reactivex.subjects.ReplaySubject;
 
 /**
  * Created by garimajain on 08/11/16.
@@ -58,7 +55,7 @@ public class LibraryPresenter extends AbstractPresenter<LibraryContract.View> im
                         @Override
                         public ObservableSource<List<Book>> apply(String s) throws Exception {
                             Log.d(TAG, "getting books for " + s);
-                            return dataSource.getBook(s);
+                            return dataSource.getBooksJinxed(s);
                         }
                     })
                     .subscribeOn(provider.io())
@@ -72,11 +69,11 @@ public class LibraryPresenter extends AbstractPresenter<LibraryContract.View> im
         } else {
             disposable = subject
                     .debounce(300, TimeUnit.MILLISECONDS)
+                    .observeOn(provider.io())
                     .flatMap(new Function<String, ObservableSource<List<Book>>>() {
                         @Override
                         public ObservableSource<List<Book>> apply(String s) throws Exception {
-                            Log.d(TAG, "getting books for " + s);
-                            return dataSource.getBook(s);
+                            return dataSource.getBooksJinxed(s);
                         }
                     })
                     .subscribeOn(provider.io())

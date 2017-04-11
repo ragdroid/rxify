@@ -137,15 +137,21 @@ public class BookRemoteDataSource implements BookDataSource {
 
 
     @Override
-    public Observable<List<Book>> getBook(@NonNull final String query) {
+    public Observable<List<Book>> getBooksJinxed(@NonNull final String query) {
         //more the length, lesser the delay
         int start = 3000 / query.length();
         //wanted to perform `initBooks()` in background as well
+        return getBooks(query)
+                .delay(randomizer.randomInRange(start, start + 100), TimeUnit.MILLISECONDS);
+    }
+
+    @Override
+    public Observable<List<Book>> getBooks(@NonNull final String query) {
         return Observable.fromCallable(new Callable<List<Book>>() {
             @Override
             public List<Book> call() throws Exception {
                 if (bookList == null) {
-                    initBooksDB();
+                    BookRemoteDataSource.this.initBooksDB();
                 }
                 return bookList;
             }
@@ -154,13 +160,7 @@ public class BookRemoteDataSource implements BookDataSource {
             public ObservableSource<Book> apply(List<Book> books) throws Exception {
                 return Observable.fromIterable(books);
             }
-        }).filter(new Predicate<Book>() {
-            @Override
-            public boolean test(Book book) throws Exception {
-                return book.name.contains(query);
-            }
-        }).toList()
-                .toObservable()
-                .delay(randomizer.randomInRange(start, start + 100), TimeUnit.MILLISECONDS);
+        }).filter(book -> book.name.contains(query)).toList()
+                .toObservable();
     }
 }

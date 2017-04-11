@@ -29,12 +29,7 @@ public class FilterPresenter extends BaseCLPresenter<Integer> implements CodeLab
     @Override
     protected Disposable getDisposable() {
         return inputValues
-                .filter(new Predicate<Integer>() {
-                    @Override
-                    public boolean test(Integer integer) throws Exception {
-                        return integer % 2 == 0;
-                    }
-                })
+                .filter(integer -> integer % 2 == 0)
                 .compose(lazyTransformer)
                 .subscribe(next, error, complete);
     }

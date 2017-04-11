@@ -57,13 +57,10 @@ public class ZipPresenter extends AbstractPresenter<ZipContract.View> implements
         Observable<FluxWeed> fluxWeedObservable = getFluxWeedObservable();
         Observable<Student> crabHairObservable = getStudentObservable();
 
-        disposable = Observable.zip(fluxWeedObservable, crabHairObservable,
-                new BiFunction<FluxWeed, Student, PolyJuice>() {
-                    @Override
-                    public PolyJuice apply(FluxWeed fluxWeed, Student student) throws Exception {
-                        return new PolyJuice(fluxWeed, student.getHair()).prepare();
-                    }
-                })
+        disposable = Observable.zip(
+                fluxWeedObservable,
+                crabHairObservable,
+                (fluxWeed, student) -> new PolyJuice(fluxWeed, student.getHair()).prepare())
                 .delay(1, TimeUnit.SECONDS, provider.computation())
                 .subscribeOn(provider.io())
                 .observeOn(provider.ui())
