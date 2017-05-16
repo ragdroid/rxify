@@ -8,10 +8,17 @@ import com.ragdroid.rxify.BaseActivity;
 import com.ragdroid.rxify.R;
 import com.ragdroid.rxify.RxifyApplication;
 import com.ragdroid.rxify.core.BaseSchedulerProvider;
+import com.ragdroid.rxify.entity.CodeLabData;
+
+import java.util.Map;
+
+import javax.inject.Inject;
+import javax.inject.Provider;
 
 import butterknife.BindDimen;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import dagger.Lazy;
 
 
 public abstract class BaseCLActivity<T extends CodeLabContract.Presenter> extends BaseActivity<T>
@@ -20,6 +27,8 @@ public abstract class BaseCLActivity<T extends CodeLabContract.Presenter> extend
     @BindView(R.id.cl_refresh) SwipeRefreshLayout refreshLayout;
     @BindView(R.id.cl_console) TextView consoleTv;
     @BindDimen(R.dimen.space_medium) int space;
+
+    @Inject Map<CodeLabData, Provider<CodeLabContract.Presenter>> presentersMap;
 
     @Override
     protected int getLayoutId() {
@@ -68,58 +77,9 @@ public abstract class BaseCLActivity<T extends CodeLabContract.Presenter> extend
     }
 
 
-    protected CodeLabContract.Presenter getCodeLabPresenter(int id) {
-        BaseSchedulerProvider schedulerProvider =
-                ((RxifyApplication) getApplication()).getAppComponent().getSchedulerProvider();
-        switch (id) {
-            case 0 :
-                return activityModule.provideEmptyPresenter(schedulerProvider);
-            case 1 :
-                return activityModule.provideJustPresenter(schedulerProvider);
-            case 2 :
-                return activityModule.provideFromPresenter(schedulerProvider);
-            case 3 :
-                return activityModule.provideNeverPresenter(schedulerProvider);
-            case 4 :
-                return activityModule.provideIntervalPresenter(schedulerProvider);
-            case 5 :
-                return activityModule.provideErrorPresenter(schedulerProvider);
-            case 6 :
-                return activityModule.provideRangePresenter(schedulerProvider);
-            case 7 :
-                return activityModule.provideIntervalRangePresenter(schedulerProvider);
-            case 8 :
-                return activityModule.provideTimerPresenter(schedulerProvider);
-            case 9 :
-                return activityModule.provideFilterPresenter(schedulerProvider);
-            case 10:
-                return activityModule.provideDistinctPresenter(schedulerProvider);
-            case 11:
-                return activityModule.provideTakePresenter(schedulerProvider);
-            case 12:
-                return activityModule.provideTakeUntilPresenter(schedulerProvider);
-            case 13:
-                return activityModule.provideSkipPresenter(schedulerProvider);
-            case 14:
-                return activityModule.provideReducePresenter(schedulerProvider);
-            case 15:
-                return activityModule.provideMapPresenter(schedulerProvider);
-            case 16:
-                return activityModule.provideFlatMapPresenter(schedulerProvider);
-            case 17:
-                return activityModule.provideAssignmentPresenter(schedulerProvider);
-            case 18:
-                return activityModule.provideBattlePresenter(schedulerProvider);
-            case 19:
-                return activityModule.provideBattleFlowPresenter(schedulerProvider);
-            case 20:
-                return activityModule.provideThreadingPresenter(schedulerProvider);
-            case 22:
-                return activityModule.provideTimeTurnerPresenter(schedulerProvider);
-            case 21:
-            default:
-                return activityModule.provideChillPresenter(schedulerProvider);
-        }
-    }
+    protected CodeLabContract.Presenter getCodeLabPresenter(CodeLabData codeLabData) {
+        return presentersMap.get(codeLabData).get();
 
+    }
 }
+

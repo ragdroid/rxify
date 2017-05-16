@@ -27,6 +27,8 @@ import com.ragdroid.rxify.codelab.presenter.RangePresenter;
 import com.ragdroid.rxify.codelab.presenter.TimerPresenter;
 import com.ragdroid.rxify.core.BaseSchedulerProvider;
 import com.ragdroid.rxify.dagger.ActivityScope;
+import com.ragdroid.rxify.dagger.CLEnumKey;
+import com.ragdroid.rxify.entity.CodeLabData;
 import com.ragdroid.rxify.home.HomeContract;
 import com.ragdroid.rxify.home.HomePresenter;
 import com.ragdroid.rxify.library.LibraryContract;
@@ -34,8 +36,11 @@ import com.ragdroid.rxify.library.LibraryPresenter;
 import com.ragdroid.rxify.zip.ZipContract;
 import com.ragdroid.rxify.zip.ZipPresenter;
 
+import javax.inject.Provider;
+
 import dagger.Module;
 import dagger.Provides;
+import dagger.multibindings.IntoMap;
 
 /**
  * Created by garimajain on 05/11/16.
@@ -64,143 +69,189 @@ public class ActivityModule {
 
     @ActivityScope
     @Provides
-    public ChillPresenter provideChillPresenter(BaseSchedulerProvider provider) {
-        return new ChillPresenter(provider);
+    @IntoMap
+    @CLEnumKey(CodeLabData.CHILL)
+    public static CodeLabContract.Presenter provideChillPresenter(ChillPresenter chillPresenter) {
+        return chillPresenter;
     }
 
     @ActivityScope
     @Provides
-    public JustPresenter provideJustPresenter(BaseSchedulerProvider provider) {
+    @IntoMap
+    @CLEnumKey(CodeLabData.JUST)
+    public static CodeLabContract.Presenter provideJustPresenter(BaseSchedulerProvider provider) {
         return new JustPresenter(provider);
     }
 
     @ActivityScope
     @Provides
-    public EmptyPresenter provideEmptyPresenter(BaseSchedulerProvider provider) {
+    @IntoMap
+    @CLEnumKey(CodeLabData.EMPTY)
+    public static CodeLabContract.Presenter provideEmptyPresenter(BaseSchedulerProvider provider) {
         return new EmptyPresenter(provider);
     }
 
 
     @ActivityScope
     @Provides
-    public NeverPresenter provideNeverPresenter(BaseSchedulerProvider provider) {
+    @IntoMap
+    @CLEnumKey(CodeLabData.NEVER)
+    public static CodeLabContract.Presenter provideNeverPresenter(BaseSchedulerProvider provider) {
         return new NeverPresenter(provider);
     }
 
     @ActivityScope
     @Provides
-    public ErrorPresenter provideErrorPresenter(BaseSchedulerProvider provider) {
+    @IntoMap
+    @CLEnumKey(CodeLabData.ERROR)
+    public static CodeLabContract.Presenter provideErrorPresenter(BaseSchedulerProvider provider) {
         return new ErrorPresenter(provider);
     }
 
 
     @ActivityScope
     @Provides
-    public RangePresenter provideRangePresenter(BaseSchedulerProvider provider) {
+    @IntoMap
+    @CLEnumKey(CodeLabData.RANGE)
+    public static CodeLabContract.Presenter provideRangePresenter(BaseSchedulerProvider provider) {
         return new RangePresenter(provider);
     }
 
 
     @ActivityScope
     @Provides
-    public IntervalPresenter provideIntervalPresenter(BaseSchedulerProvider provider) {
+    @IntoMap
+    @CLEnumKey(CodeLabData.INTERVAL)
+    public static CodeLabContract.Presenter provideIntervalPresenter(BaseSchedulerProvider provider) {
         return new IntervalPresenter(provider);
     }
 
     @ActivityScope
     @Provides
-    public IntervalRangePresenter provideIntervalRangePresenter(BaseSchedulerProvider provider) {
+    @IntoMap
+    @CLEnumKey(CodeLabData.INTERVAL_RANGE)
+    public static CodeLabContract.Presenter provideIntervalRangePresenter(BaseSchedulerProvider provider) {
         return new IntervalRangePresenter(provider);
     }
 
     @ActivityScope
     @Provides
-    public TimerPresenter provideTimerPresenter(BaseSchedulerProvider provider) {
+    @IntoMap
+    @CLEnumKey(CodeLabData.TIMER)
+    public static CodeLabContract.Presenter provideTimerPresenter(BaseSchedulerProvider provider) {
         return new TimerPresenter(provider);
     }
 
     @ActivityScope
     @Provides
-    public FromPresenter provideFromPresenter(BaseSchedulerProvider provider) {
+    @IntoMap
+    @CLEnumKey(CodeLabData.FROM)
+    public static CodeLabContract.Presenter provideFromPresenter(BaseSchedulerProvider provider) {
         return new FromPresenter(provider);
     }
 
     @ActivityScope
     @Provides
-    public FilterPresenter provideFilterPresenter(BaseSchedulerProvider provider) {
+    @IntoMap
+    @CLEnumKey(CodeLabData.FILTER)
+    public static CodeLabContract.Presenter provideFilterPresenter(BaseSchedulerProvider provider) {
         return new FilterPresenter(provider);
     }
 
     @ActivityScope
     @Provides
-    public DistinctPresenter provideDistinctPresenter(BaseSchedulerProvider provider) {
+    @IntoMap
+    @CLEnumKey(CodeLabData.DISTINCT)
+    public static CodeLabContract.Presenter provideDistinctPresenter(BaseSchedulerProvider provider) {
         return new DistinctPresenter(provider);
     }
 
     @ActivityScope
     @Provides
-    public TakePresenter provideTakePresenter(BaseSchedulerProvider provider) {
+    @IntoMap
+    @CLEnumKey(CodeLabData.TAKE)
+    public static CodeLabContract.Presenter provideTakePresenter(BaseSchedulerProvider provider) {
         return new TakePresenter(provider);
     }
 
     @ActivityScope
     @Provides
-    public SkipPresenter provideSkipPresenter(BaseSchedulerProvider provider) {
+    @IntoMap
+    @CLEnumKey(CodeLabData.SKIP)
+    public static CodeLabContract.Presenter provideSkipPresenter(BaseSchedulerProvider provider) {
         return new SkipPresenter(provider);
     }
 
     @ActivityScope
     @Provides
-    public TakeUntilPresenter provideTakeUntilPresenter(BaseSchedulerProvider provider) {
+    @IntoMap
+    @CLEnumKey(CodeLabData.TAKE_UNTIL)
+    public static CodeLabContract.Presenter provideTakeUntilPresenter(BaseSchedulerProvider provider) {
         return new TakeUntilPresenter(provider);
     }
 
     @ActivityScope
     @Provides
-    public ReducePresenter provideReducePresenter(BaseSchedulerProvider provider) {
+    @IntoMap
+    @CLEnumKey(CodeLabData.REDUCE)
+    public static CodeLabContract.Presenter provideReducePresenter(BaseSchedulerProvider provider) {
         return new ReducePresenter(provider);
     }
 
 
     @ActivityScope
     @Provides
-    public MapPresenter provideMapPresenter(BaseSchedulerProvider provider) {
+    @IntoMap
+    @CLEnumKey(CodeLabData.MAP)
+    public static CodeLabContract.Presenter provideMapPresenter(BaseSchedulerProvider provider) {
         return new MapPresenter(provider);
     }
 
     @ActivityScope
     @Provides
-    public FlatMapPresenter provideFlatMapPresenter(BaseSchedulerProvider provider) {
+    @IntoMap
+    @CLEnumKey(CodeLabData.FLATMAP)
+    public static CodeLabContract.Presenter provideFlatMapPresenter(BaseSchedulerProvider provider) {
         return new FlatMapPresenter(provider);
     }
 
     @ActivityScope
     @Provides
-    public AssignmentPresenter provideAssignmentPresenter(BaseSchedulerProvider provider) {
+    @IntoMap
+    @CLEnumKey(CodeLabData.ASSIGNMENT)
+    public static CodeLabContract.Presenter provideAssignmentPresenter(BaseSchedulerProvider provider) {
         return new AssignmentPresenter(provider);
     }
 
     @ActivityScope
     @Provides
-    public BattlePresenter provideBattlePresenter(BaseSchedulerProvider provider) {
+    @IntoMap
+    @CLEnumKey(CodeLabData.BATTLE)
+    public static CodeLabContract.Presenter provideBattlePresenter(BaseSchedulerProvider provider) {
         return new BattlePresenter(provider);
     }
 
     @ActivityScope
     @Provides
-    public BattleFlowPresenter provideBattleFlowPresenter(BaseSchedulerProvider provider) {
+    @IntoMap
+    @CLEnumKey(CodeLabData.BATTLE_FLOW)
+    public static CodeLabContract.Presenter provideBattleFlowPresenter(BaseSchedulerProvider provider) {
         return new BattleFlowPresenter(provider);
     }
 
     @ActivityScope
     @Provides
-    public ThreadingPresenter provideThreadingPresenter(BaseSchedulerProvider provider) {
+    @IntoMap
+    @CLEnumKey(CodeLabData.THREAD)
+    public static CodeLabContract.Presenter provideThreadingPresenter(BaseSchedulerProvider provider) {
         return new ThreadingPresenter(provider);
     }
 
     @ActivityScope
     @Provides
-    public TimeTurnerPresenter provideTimeTurnerPresenter(BaseSchedulerProvider provider) {
+    @IntoMap
+    @CLEnumKey(CodeLabData.TIME_TURNER)
+    public static CodeLabContract.Presenter provideTimeTurnerPresenter(BaseSchedulerProvider provider) {
         return new TimeTurnerPresenter(provider);
     }
 
