@@ -18,6 +18,7 @@ public class ChillActivity extends BaseCLActivity<CodeLabContract.Presenter> imp
 
     @Override
     protected void injectFrom(ActivityComponent activityComponent) {
+        activityComponent.inject(this);
         presenter = initCodeLabTypePresenter();
     }
 
@@ -37,7 +38,7 @@ public class ChillActivity extends BaseCLActivity<CodeLabContract.Presenter> imp
 
     private CodeLabContract.Presenter initCodeLabTypePresenter() {
         codeLabType = getIntent().getIntExtra(CODELAB_ITEM_ID, CodeLabData.CHILL.getId());
-        return getCodeLabPresenter(codeLabType);
+        return getCodeLabPresenter(CodeLabData.getCodeLab(codeLabType));
     }
 
 }
