@@ -5,7 +5,7 @@ import android.widget.TextView;
 
 import com.fueled.reclaim.BaseItem;
 import com.fueled.reclaim.BaseViewHolder;
-import com.fueled.reclaim.ItemHandlerProvider;
+import com.fueled.reclaim.ItemPresenterProvider;
 import com.ragdroid.rxify.R;
 import com.ragdroid.rxify.core.ItemType;
 import com.ragdroid.rxify.entity.Book;
@@ -19,7 +19,7 @@ import butterknife.ButterKnife;
 
 public class BookItem extends BaseItem<Book, Void, BookItem.ViewHolder> {
 
-    public BookItem(Book data, ItemHandlerProvider<Void> itemHandlerProvider) {
+    public BookItem(Book data, ItemPresenterProvider<Void> itemHandlerProvider) {
         super(data, itemHandlerProvider);
     }
 

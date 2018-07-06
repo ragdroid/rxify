@@ -51,7 +51,9 @@ public enum CodeLabData {
     BATTLE_FLOW(19, "The Battle Flow"),
     THREAD(20, "Threading"),
     CHILL(21, "ChilledOut"),
-    TIME_TURNER(22, "TimeTurner");
+    TIME_TURNER(22, "TimeTurner"),
+    SUBJECT(23, "Subject"),
+    RELAY(24, "Relay");
 
 
     public String getName() {
@@ -116,6 +118,10 @@ public enum CodeLabData {
                 return THREAD;
             case 22:
                 return TIME_TURNER;
+            case 23:
+                return SUBJECT;
+            case 24:
+                return RELAY;
             case 21:
             default:
                 return CHILL;

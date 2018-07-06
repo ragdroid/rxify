@@ -5,7 +5,7 @@ import android.widget.TextView;
 
 import com.fueled.reclaim.BaseItem;
 import com.fueled.reclaim.BaseViewHolder;
-import com.fueled.reclaim.ItemHandlerProvider;
+import com.fueled.reclaim.ItemPresenterProvider;
 import com.ragdroid.rxify.R;
 import com.ragdroid.rxify.core.ItemType;
 import com.ragdroid.rxify.core.codelab.CodeLabItemHandler;
@@ -19,7 +19,7 @@ import butterknife.ButterKnife;
  */
 
 public class CodeLabItem extends BaseItem<CodeLabData, CodeLabItemHandler, CodeLabItem.ViewHolder> {
-    public CodeLabItem(CodeLabData data, ItemHandlerProvider<CodeLabItemHandler> itemHandlerProvider) {
+    public CodeLabItem(CodeLabData data, ItemPresenterProvider<CodeLabItemHandler> itemHandlerProvider) {
         super(data, itemHandlerProvider);
     }
 
@@ -41,8 +41,8 @@ public class CodeLabItem extends BaseItem<CodeLabData, CodeLabItemHandler, CodeL
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (getitemHandler() != null) {
-                    getitemHandler().onItemClicked(getItemData());
+                if (getItemHandler() != null) {
+                    getItemHandler().onItemClicked(getItemData());
                 }
             }
         });
