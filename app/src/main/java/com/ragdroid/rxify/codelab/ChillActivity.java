@@ -28,12 +28,7 @@ public class ChillActivity extends BaseCLActivity<CodeLabContract.Presenter> imp
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         toolbar.setTitle(CodeLabData.getCodeLab(codeLabType).getName());
         toolbar.setNavigationIcon(R.drawable.ic_action_up);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
+        toolbar.setNavigationOnClickListener(view -> finish());
     }
 
     private CodeLabContract.Presenter initCodeLabTypePresenter() {

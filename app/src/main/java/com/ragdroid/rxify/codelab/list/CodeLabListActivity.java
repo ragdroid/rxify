@@ -6,7 +6,7 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import com.fueled.reclaim.ItemHandlerProvider;
+import com.fueled.reclaim.ItemPresenterProvider;
 import com.fueled.reclaim.ItemsViewAdapter;
 import com.ragdroid.rxify.BaseActivity;
 import com.ragdroid.rxify.R;
@@ -27,7 +27,7 @@ import butterknife.ButterKnife;
  */
 
 public class CodeLabListActivity extends BaseActivity<CodeLabListPresenter> implements CodeLabListContract.View,
-        ItemHandlerProvider<CodeLabItemHandler> {
+        ItemPresenterProvider<CodeLabItemHandler> {
 
 
     @BindView(R.id.codelab_list) RecyclerView codeLabList;
@@ -76,7 +76,7 @@ public class CodeLabListActivity extends BaseActivity<CodeLabListPresenter> impl
     }
 
     @Override
-    public CodeLabItemHandler getItemHandler() {
+    public CodeLabItemHandler getItemPresenter() {
         return presenter;
     }
 }

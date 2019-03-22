@@ -3,6 +3,8 @@ package com.ragdroid.rxify.logic;
 import com.ragdroid.rxify.codelab.CodeLabContract;
 import com.ragdroid.rxify.codelab.list.CodeLabListPresenter;
 import com.ragdroid.rxify.codelab.misc.TimeTurnerPresenter;
+import com.ragdroid.rxify.codelab.presenter2.RelayPresenter;
+import com.ragdroid.rxify.codelab.presenter2.SubjectPresenter;
 import com.ragdroid.rxify.codelab.presenter2.ThreadingPresenter;
 import com.ragdroid.rxify.codelab.presenter2.AssignmentPresenter;
 import com.ragdroid.rxify.codelab.presenter2.BattleFlowPresenter;
@@ -46,7 +48,6 @@ import dagger.multibindings.IntoMap;
  * Created by garimajain on 05/11/16.
  */
 @Module
-@ActivityScope
 public class ActivityModule {
 
     @ActivityScope
@@ -254,6 +255,24 @@ public class ActivityModule {
     public static CodeLabContract.Presenter provideTimeTurnerPresenter(BaseSchedulerProvider provider) {
         return new TimeTurnerPresenter(provider);
     }
+
+    @ActivityScope
+    @Provides
+    @IntoMap
+    @CLEnumKey(CodeLabData.SUBJECT)
+    public static CodeLabContract.Presenter provideSubjetPresenter(BaseSchedulerProvider provider) {
+        return new SubjectPresenter(provider);
+    }
+
+    @ActivityScope
+    @Provides
+    @IntoMap
+    @CLEnumKey(CodeLabData.RELAY)
+    public static CodeLabContract.Presenter provideRelayPresenter(BaseSchedulerProvider provider) {
+        return new RelayPresenter(provider);
+    }
+
+
 
     @ActivityScope
     @Provides
